@@ -24,6 +24,9 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
+      <%=  link_to "Home", root_path  %> |
+      <%=  link_to "About", about_path  %> |
+      <%=  link_to "Contact", contact_path  %>
       <%= yield %>
     </main>
   </body>
