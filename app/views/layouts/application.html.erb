@@ -17,16 +17,25 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+  
   </head>
 
   <body>
+    <nav>
+      <%=  link_to "Home",  root_path, class:"text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"  %> |
+      <%=  link_to "About", about_path, class:"text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"  %> |
+      <%=  link_to "Contact", contact_path, class:"text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"  %>
+    </nav>
     <main class="container mx-auto mt-28 px-5 flex">
-      <%=  link_to "Home", root_path  %> |
-      <%=  link_to "About", about_path  %> |
-      <%=  link_to "Contact", contact_path  %>
+      
       <%= yield %>
     </main>
   </body>
